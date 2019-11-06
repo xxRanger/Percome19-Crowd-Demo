@@ -398,8 +398,8 @@ func start() {
 	r.HandleFunc("/validate",validate).Methods("POST")
 
 	fmt.Println("Running http server")
-	err =http.ListenAndServeTLS(
-		"0.0.0.0:4000","etc/cert.pem","etc/key.pem",
+	err =http.ListenAndServe(
+		"0.0.0.0:4000",
 		handlers.CORS(
 			handlers.AllowedMethods([]string{"get", "options", "post", "put", "head"}),
 			handlers.AllowedOrigins([]string{"*"}),
