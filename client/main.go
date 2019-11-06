@@ -1,7 +1,7 @@
 package main
 
 import (
-	"Percome19-Crowd-Demo/client/app"
+	"github.com/xxRanger/Percome19-Crowd-Demo/client/app"
 	"encoding/json"
 	"flag"
 	"io/ioutil"
