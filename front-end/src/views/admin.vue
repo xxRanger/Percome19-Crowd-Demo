@@ -29,8 +29,8 @@
                 privateKey: "275b9b0eb20cbf877c96ab88cbe11b7609229162c15f0f2d206d85492be94f1b"
             };
             this.dataConsumerAccount = {
-                address: "0x88d6F234b6327b7a9d9d23014EFd6E05b6Dc8943",
-                privateKey: "65CF458E20E12991BA6AEBC210B8293AD5B3495F585CECC6D22DE77933DE2B0F"
+                address: "0xd1A13B2C486d24D15BBf6b9376881EAB9AC9437D",
+                privateKey: "A59D95FF309B945981D3D840BDC7C4E21520F0E26BB3D50A066ED6D845B2BA48"
             };
         }
     };
