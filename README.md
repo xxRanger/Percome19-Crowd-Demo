@@ -1,11 +1,41 @@
-# Introduction
+## Introduction
 
-This demo is for paper **Aggregating Crowd Wisdom via Blockchain: A Private, Correct, and Robust Realization**. 
+This demo is for paper **Aggregating Crowd Wisdom via Blockchain: A Private, Correct, and Robust Realization**, a system for secure aggregation. 
 
-A data consumer can use this app to get an sum aggregation of data providers. The smart contract is deployed at Kovan testnet.
+**The system only implement partial ideas of the original paper. If you are interested, please read the full paper**
+
+The system includes three parties, data consumer, service provider and data providers. A data consumer can use this system to get an sum aggregation securely from data providers with help of service provider. The role of service provider is to aggregate encrypted data from data providers and use bulletproof to exclude invalid data, then use homomorphic addition to get the sum and return it to data consumer. 
+
+A smart contract is deployed at Kovan testnet.
 You can see from [here](https://kovan.etherscan.io/address/0x2a152cad883162011dcdf696a4861edc81619e14)
 
-## Every part of this project
+## Each stage of the system.
+
+### Solicitation
+
+Data consumer submit a task on blockchain.
+
+### Registration
+
+Service provider and data providers register on blockchain.
+
+### Submission
+
+Data providers submit encrypted data (a number at this demo) to blockchain. Note that data providers could be honest or malicious. 
+
+### Aggregation
+
+Service provider aggregate encrypted data from the blockchain. Use bulletproof to exclude invalid data (valid data is in a given range). Then use homomorphic addition to get the sum. Return sum back to blockchain.
+
+### Approvment
+
+Data consumer collect sum and approve to continue. 
+
+### Claim
+
+Service provider and data providers claim their reward.
+
+## Each part of this project
 
 ### back-end
 
@@ -13,12 +43,12 @@ Provide core function for dealing with front-end and blockchain.
 
 ### front-end
 
-Subpath /admin: An admin page providing friendly interface for data consumer and service provider  to manage crowdsourcing task.
+Subpath /admin: An admin page providing friendly interface for data consumer and service provider to manage crowdsourcing task.
 Rootpath /: Provide friendly interface for data providers to submit their data and get their reward.
 
 ### client
 
-A simulation of data consumer. You can set the number of data consumers to exploring this demo.
+Robots to simulate behavior of data consumer. You can set the number of data consumers to exploring this demo.
 
 ## Usage(As a test at local)
 
@@ -126,17 +156,23 @@ The page for admin is at /#admin
 
 The default password for admin is conggroup, then click submit to continue
 
-## Run flow
+## Demo run flow
 
-1. admin: solicit task, as an example, input number 100, and click solicit
-2. user: submit a number, say invalid number -5 as an example and click submit, at same time 20 fake clients will also submit
-3. admin: No user register any more, so stop registration.
-4. admin: Click aggregate. Server will aggregate results from blockchain and put sum back.
-5. admin: Click approve to continue.
-6. admin: Click show statics, it will showes the statistics of submission, you can see your invalid number -5. Then click back to continue
-7. admin: Click claim to claim reward.
-8. User: click claim to claim reward.
-9. After all party claim, back to step 1.
+### Stage solicitation
+admin: solicit task, as an example, input number 100, and click solicit
+### Stage registration
+user: submit a number like an invalid number -5 and click submit, at same time 20 robots will also submit
+### Stage submission
+admin: If no user register any more, stop registration.
+### Stage aggregation
+admin: Click aggregate. Server will aggregate results from blockchain and put sum back.
+### Stage approvment
+admin: Click show statics, it will showes the statistics of submissions, you can see your invalid number -5. Then click back to continue
+admin: Click approve to continue.
+### Stage claim
+1. admin: Click claim to claim reward.
+2. User: Click claim to claim reward.
+3. After all party claim, back to step stage solicitation.
 
 
 
