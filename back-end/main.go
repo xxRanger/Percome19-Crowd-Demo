@@ -417,12 +417,14 @@ var (
 
 func init() {
 	flag.StringVar(&chainPort,"chainPort","wss://kovan.infura.io/ws/v3/ab1d2a604f814c688b4cbfbc9550fb1b","chain websocket(default wss://kovan.infura.io/ws)")
+	flag.Parse()
 }
 
 func main() {
 	//testPallier()
 	//testBulletProof()
 	//testBulletProof2()
+	log.Println("chain port:",chainPort)
 	f,err:= os.OpenFile(LOG_FILE,os.O_RDWR|os.O_CREATE|os.O_APPEND,0666)
 	if err!=nil {
 		log.Fatal(err)

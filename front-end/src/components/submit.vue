@@ -481,7 +481,7 @@
                     console.log("websocket open");
                     this.reconnecting = false;
                     this.initialDisplay();
-                    // this.requireEther();
+                    this.requireEther();
                 };
                 this.ws.onmessage = e => {
                     let res = JSON.parse(e.data);

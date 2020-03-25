@@ -6,5 +6,5 @@ module.exports = {
     presets: [
         '@vue/app'
     ],
-    plugins: removeConsolePlugin
+    // plugins: removeConsolePlugin
 };
