@@ -20,7 +20,7 @@ Rootpath /: Provide friendly interface for data providers to submit their data a
 
 A simulation of data consumer. You can set the number of data consumers to exploring this demo.
 
-## Usage 
+## Usage(As a test at local)
 
 ```bash
 mkdir -p go-project/src/github.com/xxRanger
@@ -30,7 +30,7 @@ git clone https://github.com/xxRanger/Percome19-Crowd-Demo.git
 
 ### Run blockchain testnet
 
-Follow the instruction to in stall ethereum https://geth.ethereum.org/docs/install-and-build/installing-geth
+Follow the instruction to install ethereum https://geth.ethereum.org/docs/install-and-build/installing-geth
 
 Under folder Percome19-Crowd-Demo/testnet
 ```bash
@@ -124,15 +124,15 @@ The page for user is at root path /
 
 The page for admin is at /#admin   
 
-The default password for admin is conggroup, then click submit
+The default password for admin is conggroup, then click submit to continue
 
 ## Run flow
 
 1. admin: solicit task, as an example, input number 100, and click solicit
 2. user: submit a number, say invalid number -5 as an example and click submit, at same time 20 fake clients will also submit
 3. admin: No user register any more, so stop registration.
-4. admin: Click Aggregate. Server will aggregate results from blockchain and put sum back.
-5. admin: Click Approve to continue.
+4. admin: Click aggregate. Server will aggregate results from blockchain and put sum back.
+5. admin: Click approve to continue.
 6. admin: Click show statics, it will showes the statistics of submission, you can see your invalid number -5. Then click back to continue
 7. admin: Click claim to claim reward.
 8. User: click claim to claim reward.
